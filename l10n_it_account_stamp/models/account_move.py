@@ -62,7 +62,7 @@ class AccountMove(models.Model):
                     self.company_id,
                     inv_tax.date,
                 )
-                for inv_tax in self.line_ids.filtered(
+                for inv_tax in self.invoice_line_ids.filtered(
                     lambda line: set(line.tax_ids.ids)
                     & set(
                         stamp_product_id.l10n_it_account_stamp_stamp_duty_apply_tax_ids.ids
